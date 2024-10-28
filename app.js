@@ -16,6 +16,16 @@ function sortear(){
         return;
     }
 
+    if ((AQuantidade > (AMaximo - AMinimo))){
+        resultado.innerHTML = '<label class="texto__paragrafo">Atenção a quantidade de números sorteados deve ser menor que o intervalo!!</label>';
+        return;
+    }
+
+    if ((AMinimo >= AMaximo)){
+        resultado.innerHTML = '<label class="texto__paragrafo">Campo "Do número" deve ser inferior ao campo "Até o número". Verifique!</label>';
+        return;
+    }
+
     for(let i = 0; i < AQuantidade; i++){
          numero = obterNumeroAleatorio(AMinimo, AMaximo);
         while(numerosSorteados.includes(numero)){
