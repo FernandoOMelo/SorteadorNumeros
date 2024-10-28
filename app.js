@@ -11,6 +11,11 @@ function sortear(){
     let AMinimo = parseInt(edtMinimo.value);
     let AMaximo = parseInt(edtMaximo.value);
 
+    if (AQuantidade.toString() == 'NaN' || AMinimo.toString() == 'NaN' || AMaximo.toString() == 'NaN'){
+        resultado.innerHTML = '<label class="texto__paragrafo">Preencha todos os campos!</label>';
+        return;
+    }
+
     for(let i = 0; i < AQuantidade; i++){
          numero = obterNumeroAleatorio(AMinimo, AMaximo);
         while(numerosSorteados.includes(numero)){
